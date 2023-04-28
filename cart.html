@@ -4,9 +4,513 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Addcart</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+         #screen {
+            height: 1000px;
+            width: 100%;
+            /* border:5px solid red; */
+         }
+         #navbar{
+            height: 85px;
+            width: 100%;
+            /* border:4px solid blue; */
+            display: flex;
+            border-bottom: 1px solid rgb(179, 179, 179);
+         }
+         #navbar>div{
+            height: 65px;
+            width: 33.3%;
+            /* border:2px solid gold; */
+            display: flex;
+            margin-top: 10px;
+        
+         }
+         #navbar>div:nth-child(2)>p>span{
+            color: rgb(32,189,153);
+            text-decoration: underline;
+
+         }
+         
+         #navbar>div:nth-child(3)>img{
+            height: 30px;
+            width: 30px;
+            margin-top: 15px;
+
+         }
+         
+         #navbar>div>p{
+            display: flex;
+            font-weight: bolder;
+            margin-left: 10px;
+            margin-top: 20px;
+         }
+         
+         
+         #img{
+            width: 15%;
+            height: 55px;
+         }
+         #part{
+            /* border-bottom: 1px solid gray; */
+            width: 60%;
+            height: 700px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            
+
+         }
+         #left{
+            width:59%;
+            height:100%;
+            margin-top: 20px;
+         }
+        
+         
+         #check{
+            height: 80px;
+            border:1px solid rgb(179, 179, 179);
+            display: flex;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            /* margin-top: 10px; */
+         }
+         #check>div{
+            display: flex;
+            margin-top: 30px;
+            text-align: center;
+            margin-bottom:30px;
+         }
+         #check>div>button{
+            height: 40px;
+            font-size: 10px;
+            margin-left: 130px;
+            color: rgb(255,63,108);
+            background-color: white;
+            border: 3px solid rgb(255,63,108);
+            padding: 5px;
+        
+         }
+         #offer{
+            height: 100px;
+            border:1px solid rgb(179, 179, 179);
+            margin-bottom: 15px;
+            padding-left: 15px;
+         }
+
+         #offer>div>button{
+            color: red;
+            border: none;
+            background-color: white;
+            margin-top: 15px;;
+         }
+         #offer>div>p{
+            font-size:small;
+            margin-top: 10px;
+         }
+         #offer>div>li{
+            font-size:large;
+            font-style:normal;
+            margin-top: 10px;
+         }
+         #Yay{
+            display:flex;
+            border:1px solid rgb(179, 179, 179);
+            padding-left: 15px;
+         }
+         #Yay>img{
+            height: 30px;
+            width: 35px;
+            margin-top:7px;
+         }
+         #Yay>p{
+            margin-top: 20px;
+            margin-bottom: 7px;
+            margin-left: 10px;
+
+         }
+         #drop{
+            display: flex;
+            margin-top: 10px;
+            height: 65px;
+            border: 1px solid rgb(179, 179, 179);
+            padding-top: 5px;
+         }
+         #drop>img{
+            height: 40px;
+            width: 35px;
+            margin-top:7px;
+            margin-left: 10px;
+         }
+         #drop>p{
+            margin-left: 35px;
+            margin-bottom: 40px;
+         }
+         #item{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            
+         }
+         #item>h4{
+            margin-top: 10px;
+            margin-left: 5px;
+            font-size: 15px;
+         }
+         #item>div{
+            display: flex;
+            margin-left: 100px;
+         }
+         #item>div>div{
+            height: 30px;
+            width: 1px;
+            border: 1px solid gray;
+            margin-left: 10px;
+         }
+         #item>div>button{
+            margin-left:10px;
+            border: none;
+            background-color: white;
+            font-size: 12px;
+
+         }
+         #tshirt{
+            height: 200px;
+            width: 100%;;
+            border: 1px solid gray;
+            display: flex;
+            margin-top: 15px;
+            justify-content: space-between;
+            padding: 10px;
+        
+         }
+         #tshirt>div:nth-child(1){
+            width:35%;
+            height: 100%;
+        
+         }
+         #tshirt>div:nth-child(2){
+            width:62%;
+            height: 100%;
+        
+         }
+         #tshirt>div:nth-child(2)>h5>del{
+            color: gray;
+            margin-left: 5px;
+
+         }
+         #tshirt>div:nth-child(2)>h5>span{
+            color: red;
+            margin-left: 5px;
+
+
+         }
+         #tshirt>div:nth-child(2)>h4{
+            margin-bottom: 5px;
+         }
+         #tshirt>div:nth-child(2)>p{
+            margin-bottom: 10px;
+         }
+         #tshirt>div:nth-child(2)>button{
+            margin-bottom: 10px;
+         }
+         #tshirt>div:nth-child(2)>h5{
+            margin-bottom: 5px;
+         }
+         #tshirt>div:nth-child(2)>p:nth-child(6)>span{
+            font-weight: bold;
+         }
+
+         
+         
+         #tshirt>div>img{
+                height:100%;
+                width:95%;
+         }
+         
+         #right{
+            width:40%;
+            height:640px;
+            /* border:2px solid yellow; */
+            border-left: 1px solid rgb(179, 179, 179);
+            padding-left: 10px;
+         }
+         #coup{
+            height: 90px;
+            margin-top: 10px;
+            border-bottom: 1px solid rgb(179, 179, 179);
+            padding-left: 10px;
+            /* display: flex; */
+         }
+          #coup>div{
+            display: flex;
+          }
+          
+          #coup>div>button{
+            margin-left: 140px;
+            padding:5px;
+            background-color:white ;
+            border: solid rgb(255,79,120);
+            color: rgb(255,79,120);
+            font-size:10px;
+          }
+          #coup>p:nth-child(3){
+            margin-top: 10px;
+
+          }
+          #coup>p:nth-child(3)>span{
+            color: red;
+
+          }
+
+         #mrp{
+            height: 50px;
+            border-bottom: 1px solid rgb(179, 179, 179);
+            padding-left: 10px;
+
+         }
+         #mrp>p:nth-child(2)>span{
+            margin-left: 200px;
+         }
+         #mrp>p:nth-child(3)>span{
+            margin-left: 182px;
+         }
+         #mrp>p{
+            margin-top: 10px;
+         }
+         #mrp>button{
+            height:40px ;
+            width:97% ;
+            background-color: rgb(255,63,108);
+            color: azure;
+            border: none;
+            margin-top: 30px;
+            
+         }
+         #photo{
+            height: 450px;
+            width: 60%;
+            /* border: 2px solid red; */
+            margin: auto;
+            background-color: rgb(255,246,248);
+            
+         }
+         #photo>hr{
+            margin-top:10px;
+            border: 1px solid black;
+
+         }
+         #photo>h4{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+         }
+         #photo>div{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        
+         }
+         #photo>div>div{
+            width: 19%;
+            background-color: white;
+            height: 350px;
+            /* border: 1px solid black; */
+         }
+         #photo>div>div>img{
+            width: 100%;
+         }
+         #photo>div>div>h4{
+            margin-left:10px ;
+            margin-top: 10px;
+            margin-bottom: 5px;
+         }
+         #photo>div>div>p:nth-child(3){
+                color: gray;
+                font-size: 13px;
+                margin-left: 10px;
+                margin-bottom: 5px;
+         }
+         #photo>div>div>p:nth-child(4)>span:nth-child(1){
+                font-size: 14px;
+                font-weight: bold;
+
+         }
+         #photo>div>div>p:nth-child(4)>del:nth-child(2){
+                font-size: 14px;
+                color: grey;
+         }
+         #photo>div>div>p:nth-child(4)>span:nth-child(3){
+                font-size: 14px;
+                color: red;
+         }
+         #photo>div>div>div{
+            height: 50px;
+            width: 91%;
+            border-top: 1px solid gray;
+            margin-left: 5px;
+            
+            margin-top: 15px;
+         }
+         #photo>div>div>div>p{
+            margin-left: 30px;
+            margin-top: 15px;
+            font-size: 13px;
+            color: red;
+         }
+         </style>
 </head>
 <body>
+    <div id="screen">
+        <div id="navbar">
+            <div id="image">
+                <img src="https://images.indianexpress.com/2021/01/myntra.png"/>
+            </div>
+            <div>
+                <p> <span>Bag</span>.......ADDRESS......PAYMENT </p>
+            </div>
+            <div >
+                <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png"/>
+                <p>100%Secure</p>
+            </div>
+        </div>
+        <div id="part">
+            <div id="left">
+                <div id="check">
+                   <div>
+                    <h4>Check delivery time & services</h4>
+                    <button> ENTER PIN CODE</button>
+                   </div>
+                </div>
+                <div id="offer">
+                    <div>
+                       <li>Available Offers</li>
+                        <p>10% Instant Discount on ICICI Credit And Debit Card on min spend on Rs 3,500.TCA</p>
+                        <button>show more </button>
+                        </div>
+                    </div>
+                <div id="Yay">
+                    <img src="https://constant.myntassets.com/checkout/assets/img/ship-free.webp"/>
+                    <p> Yay ! <b>No convenience fee</b> on this order.</p>
+                </div>
+                <div id="drop">
+                    <div>
+                    <img src="https://constant.myntassets.com/checkout/assets/img/price-drop.webp"/>
+                </div>
+                <div>
+                    <h4>Prices Have Dropped</h4>
+                    
+                    <p>The price and seller of one or more items in your bag has changed.Buy Them Now!</p>
+                </div>
+            </div>
+                <div id="item">
+                    <input type="checkbox"/>
+                    <h4>0/1 ITEMS SELECTED </h4>
+                    <div>
+                    <button> REMOVE </button> <div></div><button> MOVE TO WISHLIST</button>
+                </div>
+            </div>
+                <div id="tshirt">
+                    <div>
+                    <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/14047672/2021/5/17/c1fd89a5-6364-4d0b-bde4-fcc0b7ddd1571621252467672-Louis-Philippe-Men-Navy-Blue-Solid-Polo-Collar-T-shirt-71816-1.jpg" />
+                    </div>
+                    <div>
+                        <h4>Louis Phillippe</h4>
+                        <p>Men Navy Blue Polo Collar Tshirt</p>
+                       <button>size:L</button> <button>Qty:1</button>
+                       <h5>Rs 1,044 <del>1,899</del><span> 45% OFF</span></h5>
+                       <p> <span>14 Days</span> return available</p>
+                    </div>
+                </div>
+
+                </div>
+
+
+
+
+            
+            <div id="right">
+                <div id="coup">
+                <p>coupons</p>
+                <div>
+                <H5>Apply Coupons</H5> 
+                <button> APPLY</button>
+            </div>
+            <p><span>Login</span> To get upto Rs 200 OFF on first order</p>
+            </div>
+            <div id="mrp">
+                <p>PRICE DETAILS(0 Item)</p>
+                <p>Total MRP<span>Rs 0</span> </p>
+                <p>Total Amount<span>Rs 0</span></p>
+                <button>PLACE ORDER</button>
+            </div>
+
+            </div>
+
+        </div>
+        <div id="photo">
+            <hr/>
+            <h4> You May also like :</h4>
+            <div>
+                <div>
+                    <img src="https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/productimage/2021/5/10/97644fc4-3b36-4934-9265-af4fe1fbac1e1620650185599-1.jpg"/>
+                    <h4>Levis</h4>
+                    <p> Men Polo Collar</p>
+                    <P><span> Rs 1679</span> <del>2799</del><span>40% Off</span></P>
+                    <div>
+                        <p>ADD TO BAG</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/14379890/2021/6/29/0106d422-bf06-40c2-9292-21d5bacb91fa1624948315814-Louis-Philippe-Men-Tshirts-9571624948315148-1.jpg"/>
+                    <h4>Levis</h4>
+                    <p> Men Polo Collar</p>
+                    <P><span> Rs 1679</span> <del>2799</del><span>40% Off</span></P>
+                    <div>
+                        <p>ADD TO BAG</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/16803344/2022/1/27/94316331-af73-4330-9473-5e7deed6fccb1643276103852-Levis-Men-Maroon-Solid-Polo-Collar-Regular-Sleeves-Pure-Cott-1.jpg"/>
+                    <h4>Levis</h4>
+                    <p> Men Polo Collar</p>
+                    <P><span> Rs 1679</span> <del>2799</del><span>40% Off</span></P>
+                    <div>
+                        <p>ADD TO BAG</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/14379884/2021/6/29/4e1bd57a-bb85-44c1-842e-c3d359915c1d1624950882190ABOFMenBurgundySolidPureCottonRegularFitJoggersTshirtsLouisP1.jpg"/>
+                    <h4>Levis</h4>
+                    <p> Men Polo Collar</p>
+                    <P><span> Rs 1679</span> <del>2799</del><span>40% Off</span></P>
+                    <div>
+                        <p>ADD TO BAG</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://assets.myntassets.com/q_95,w_172,c_limit,f_webp,fl_progressive/assets/images/14379898/2021/6/29/03fe2217-abe9-47c9-84c3-68824c89e2ab1624948322883-Louis-Philippe-Men-Tshirts-6591624948322206-1.jpg"/>
+                    <h4>Levis</h4>
+                    <p> Men Polo Collar</p>
+                    <P><span> Rs 1679</span> <del>2799</del><span>40% Off</span></P>
+                    <div>
+                        <p>ADD TO BAG</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     
 </body>
 </html>
