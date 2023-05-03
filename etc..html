@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men-clothing</title>
+    <link href="/men-clothing.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    #mainscreen{
+        width:100%;
+        /* height:3000px; */
+        /* border:1px solid red; */
+    }
+ 
+    #productmain{
+        width:97%;
+        /* height:3000px; */
+        /* border:5px solid blue; */
+        margin: auto;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        /* margin-top: 200px; */
+    }
+    #product-img{
+        width:55%;
+        height:100%;
+        /* border:1px solid red; */
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #product-img >div{
+        width:49.5%;
+        height:600px;
+        margin-bottom: 13px;
+        overflow: hidden;
+    }
+    #product-img >div >img{
+        width:100%;
+        height:100%;
+    }
+    #product-img >div :hover {
+        transform: scale(1.2);
+    }
+    #product-info{
+        width:43%;
+        /* height:3000px; */
+        /* border:1px solid red; */
+    }
+    #product-info >div:nth-child(1) {
+        border-bottom:1px solid rgb(181, 180, 180);
+    }
+    #product-info >div:nth-child(1) >p {
+        color:grey;
+        font-size: 28px;
+        margin-bottom: 15px;
+        margin-top: 5px;
+    }
+    #product-info >div:nth-child(1) > div{
+        height:35px;
+        width:200px;
+        border:1px solid grey;
+        margin-bottom: 15px;
+    }
+    #product-info >div:nth-child(1) > div >p{
+        font-size: 22px;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    #product-info >div:nth-child(1) > div >p >b>i{
+        color:rgb(20,149,143);
+        font-size: 15px;
+    }
+    #product-info >div:nth-child(2) {
+        border-bottom:1px solid rgb(181, 180, 180);
+    }
+    #product-info >div:nth-child(2) >p:nth-child(1){
+        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    #product-info >div:nth-child(2) >p:nth-child(1) >span:nth-child(1){
+        /* background-color: grey; */
+        font-weight: bold;
+    }
+    #product-info >div:nth-child(2) >p:nth-child(1) >span:nth-child(2){
+        font-size: 25px;
+        color:grey;
+    }
+    #product-info >div:nth-child(2) >p:nth-child(1) >span:nth-child(3){
+        color:rgb(255,144,90);
+    }
+    #product-info >div:nth-child(2) >p:nth-child(2){
+        color:rgb(14,166,133);
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    #product-info >div:nth-child(2)>p:nth-child(3) >span:nth-child(1){
+        font-size: 22px;
+        font-weight: bold;
+    }
+    #product-info >div:nth-child(2)>p:nth-child(3) >span:nth-child(2){
+        font-size: 21px;
+        font-weight: bold;
+        color:red;
+        margin-left: 50px;
+    }
+    #product-info >div:nth-child(2) >div:nth-child(4){
+        height:70px;
+        width:100%;
+        /* border:1px solid black; */
+        display: flex;
+        margin-right: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    #product-info >div:nth-child(2) >div:nth-child(4) >div{
+        height:60px;
+        width:60px;
+        border:1px solid grey;
+        margin-right: 12px;
+        border-radius: 50%;
+      
+    }
+    #product-info >div:nth-child(2) >div:nth-child(4) >div >p{
+        margin-top: 20px;
+        margin-left: 23px;
+        font-weight: bold;
+    }
+    #product-info >div:nth-child(2) >div:nth-child(4) >div:nth-child(4) >p{
+        margin-top: 20px;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+    #product-info >div:nth-child(2) >div:nth-child(4) >div:nth-child(5) >p{
+        margin-top: 20px;
+        margin-left: 15px;
+        font-weight: bold;
+    }
+    #product-info >div:nth-child(2) >div:nth-child(5) > button:nth-child(1){
+        height:70px;
+        width:350px;
+        border:1px solid red;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: rgb(255,62,108);
+        color:white;
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
+    #product-info >div:nth-child(2) >div:nth-child(5) > button:nth-child(1):hover{
+        background-color: rgb(248, 23, 75);
+    }
+    #product-info >div:nth-child(2) >div:nth-child(5) > button:nth-child(1) >i{
+        margin-right: 10px;
+    }
+    #product-info >div:nth-child(2) >div:nth-child(5) > button:nth-child(2){
+        height:70px;
+        width:300px;
+        /* border:1px solid red; */
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        background-color: white;
+        border: 1px solid rgb(209, 204, 204);
+        margin-bottom: 30px;
+    }
+    #product-info >div:nth-child(2) >div:nth-child(5) > button:nth-child(2):hover{
+        border: 1px solid black;
+    }
+    #product-info >div:nth-child(2) >div:nth-child(5) > button:nth-child(2)>i{
+        margin-right: 10px;
+    }
+    /* #product-info >div:nth-child(3){
+        border:5px solid yellow;
+        height:2000px;
+    } */
+    #product-info >div:nth-child(3)>div:nth-child(1){
+        /* border:1px solid blue; */
+        margin-top: 20px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(1) >h1{
+        font-size: 22px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(1) >h1 >i{
+        margin-left: 10px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(1)>input{
+        height:50px;
+        width:350px;
+        border-radius: 5px;
+        font-size: 20px;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(1) > p{
+        font-size: 18px;
+        margin-bottom: 10px;
+        color:rgb(100, 99, 99);
+    }
+    #product-info >div:nth-child(3)>div:nth-child(1) >div >p{
+        font-size: 23px;
+        margin-bottom: 10px;
+        color:rgb(100, 99, 99);
+    }
+    #product-info >div:nth-child(3)>div:nth-child(1) >div {
+        margin-bottom: 50px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(2){
+        border-bottom:1px solid grey;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(2) >h1{
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(2) >h1 >i{
+        margin-left: 10px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(2) >p{
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(2) >p >span{
+        color: rgb(255,144,90);
+    }
+    #product-info >div:nth-child(3)>div:nth-child(2) >ul{
+        margin-left: 20px;
+        font-size: 20px;
+        color:rgb(85, 83, 83);
+    }
+    #product-info >div:nth-child(3)>div:nth-child(2) >ul>li{
+        margin-bottom: 5px;
+    }
+    .para{
+        font-size: 21px;
+        color:rgb(255,69,115);
+    }
+    #product-info >div:nth-child(3)>div:nth-child(2) >h2{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(2){
+        padding-bottom: 30px;
+    }
+    /* #product-info >div:nth-child(3)>div:nth-child(3){
+        border: 1px solid blue;
+    } */
+    #product-info >div:nth-child(3)>div:nth-child(3) >h1{
+        font-size: 22px;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(3) >p{
+        font-size: 22px;
+        color: rgb(85, 83, 83);
+        margin-bottom: 20px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(3)>div{
+        margin-bottom: 20px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(3) >div>h2{
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(3)>div >p{
+        font-size: 22px;
+        color:rgb(80, 77, 77);
+    }
+    #product-info >div:nth-child(3)>div:nth-child(4){
+        border-bottom:1px solid rgb(179, 175, 175);
+    }
+    #product-info >div:nth-child(3)>div:nth-child(4)>h1{
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(4) >div{
+        display: flex;
+        justify-content: space-between;
+        width:85%;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(4) >div >div{
+        width:45%;
+        /* height:300px; */
+        /* border:1px solid blue; */
+    }
+    #product-info >div:nth-child(3)>div:nth-child(4) >div >div>div{
+        height:70px;
+        width:100%;
+        border-bottom: 1px solid grey;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(4) >div >div>div>p:nth-child(1){
+        font-size: 20px;
+        color: grey;
+        margin-top: 10px;
+    }
+    #product-info >div:nth-child(3)>div:nth-child(4) >div >div>div>p:nth-child(2){
+        font-size: 25px;
+        color: rgb(92, 90, 90);
+    }
+    #product-info >div:nth-child(3)>div:nth-child(4) >p{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color:rgb(255,69,115);
+        font-size: 21px;
+    }
+</style>
+    
+</head>
+
+<body>
+    <div id="mainscreen">
+       
+        <div id="productmain">
+           
+           <div id="product-info">
+           <div>
+            <h1>Minions by Kook N Keech</h1>
+            <p>Men Purple Boxy Fit Printed Round Neck Pure Cotton T-shirt</p>
+            <div><p><b>4.2 <i class="fa-solid fa-star"></i></b>| 2.8k Ratings</p></div>
+           </div>
+
+
+           <div>
+            <p><span>₹571  </span><span>MRP <del>₹1099</del></span> <span>  (48% OFF)</span></p>
+            <p>inclusive of all taxes</p>
+            <p><span>SELECT SIZE</span><span>SIZE CHART&nbsp;&nbsp;&nbsp;></span></p>
+            <div>
+                <div><p>S</p></div>
+                <div><p>M</p></div>
+                <div><p>L</p></div>
+                <div><p>XL</p></div>
+                <div><p>XXL</p></div>
+            </div>
+            <div>
+                <button><i class="fa-solid fa-bag-shopping"></i>ADD TO BAG</button>
+                <button><i class="fa-regular fa-heart"></i>WHISLIST</button>
+            </div>
+           </div>
+         
+
+           <div>
+            <div>
+                <h1>DELIVERY OPTIONS<i class="fa-solid fa-truck"></i></h1>
+                <input placeholder="Enter pincode"/>
+                <p>Please enter PIN code to check delivery time & Pay on Delivery Availability</p>
+                <div>
+                <p>100% Original Products</p>
+                <p>Pay on delivery might be available</p>
+                <p>Easy 14 days returns and exchanges</p>
+                <p>Try & Buy might be available</p>
+                </div>
+               </div>
+    
+               <div>
+                <h1>BEST OFFERS<i class="fa-solid fa-tag"></i></h1>
+                <p>Best Price:<span>Rs.444</span></p>
+                <ul>
+                    <li>Applicable on: Orders above Rs. 899(only on first purchase)</li>
+                    <li>Coupon Code: <b>MYNTRA200</b></li>
+                    <li>Coupon Discount: Rs.127 off(check cart for final savings)</li>
+                </ul>
+                <p class="para">View Eligible Products</p>
+                <h2>10% Instant Discount on RuPay Credit Cards</h2>
+                <ul>
+                    <li>Min Spend Rs 2,000, Max Discount Rs 500.</li>
+                </ul>
+                <p class="para">Terms & Condition</p>
+                <h2>EMI option available</h2>
+                <ul>
+                    <li>
+                        EMI starting from Rs.27/month
+                    </li>
+                </ul>
+                <p class="para">View Plan</p>
+               </div>
+
+
+               <div>
+                <h1>PRODUCT DETAILS</h1>
+                <p>Purple printed t-shirt, has a roundneck, short sleeves</p>
+                <div>
+                    <h2>Size & Fit</h2>
+                    <p>Boxy Fit</p>
+                    <p>The model (height 6') is wearing a sixe M</p>
+                </div>
+                <div>
+                    <h2>Material & Care</h2>
+                    <p>1005 Cotton</p>
+                    <p>Machine-Wash</p>
+                </div>
+               </div>
+
+               <div>
+                <h1>Specifications</h1>
+                <div>
+                    <div>
+                      <div>
+                        <p>Character</p>
+                        <p>Minions</p>
+                      </div>
+                      <div>
+                        <p>Fit</p>
+                        <p>Boxy</p>
+                      </div>
+                      <div>
+                        <p>Main Trend</p>
+                        <p>Graphic Print Others</p>
+                      </div>
+                      <div>
+                        <p>Neck</p>
+                        <p>Round Neck</p>
+                      </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <p>Fabric</p>
+                            <p>Pure Cotton</p>
+                          </div>
+                          <div>
+                            <p>Length</p>
+                            <p>Regular</p>
+                          </div>
+                          <div>
+                            <p>Multipack Set</p>
+                            <p>Single</p>
+                          </div>
+                          <div>
+                            <p>Occasion</p>
+                            <p>Casual</p>
+                          </div>
+                    </div>
+                </div>
+                <p >See More</p>
+            </div>
+               
+           </div>
+
+
+          
+           </div>
+        </div>
+    </div>
+</body>
+</html>
