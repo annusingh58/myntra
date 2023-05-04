@@ -53,7 +53,7 @@ function signup(event){
  
  }
 
- function login(event){
+ function Login(event){
     event.preventDefault();
     alert("working");
 
