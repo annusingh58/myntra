@@ -13,7 +13,7 @@ function signup(event){
          if(password==confirmpassword){
  
             
-                 var myntra= JSON.parse(localStorage.getItem("muser")) || []   
+                 var myntra= JSON.parse(localStorage.getItem("myntraUserData")) || []   
                  var flag=false;
                  for(i=0;i<myntra.length;i++){
                      if(myntra[i].uemail==email){
@@ -25,7 +25,7 @@ function signup(event){
                  var mdata ={uname :name,uemail:email,upassword:password,uconfirmpassword:confirmpassword}
                  myntra.push(mdata);
                  console.log(myntra);
-                 localStorage.setItem("muser",JSON.stringify(myntra))
+                 localStorage.setItem("myntraUserData",JSON.stringify(myntra))
                  window.location.href="./login.html"
  
                  }
@@ -63,7 +63,7 @@ function signup(event){
 
     var loginuser={};
     if(lemail && lpassword){
-        var myntra=JSON.parse(localStorage.getItem("muser"))
+        var myntra=JSON.parse(localStorage.getItem("myntraUserData"))
         var flag =false;
         for(var i=0;i<myntra.length;i++){
             if(myntra[i].uemail==lemail){
@@ -74,9 +74,9 @@ function signup(event){
            
         }
              if( flag==true){
-                localStorage.setItem("mlogin",JSON.stringify(loginuser))
+                localStorage.setItem("myntraCurrentUser",JSON.stringify(loginuser))
                 alert("login successfull")
-                window.location.href="./myntrahome.html"
+                window.location.href="./myntrahome.html";
                 
 
         }

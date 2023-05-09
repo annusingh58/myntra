@@ -968,7 +968,7 @@
     <script>
         window.onload=function(){
             // alert("working");
-            var user=JSON.parse(localStorage.getItem("mlogin"));
+            var user=JSON.parse(localStorage.getItem("myntralogin"));
             var div=document.getElementById("switch");
             var divforlogout=document.getElementById("Logout");
             var name=`<h5>${user.uname}</h5>`;
@@ -979,7 +979,7 @@
 
   function Logout(){
     alert("Logout Successfully");
-    localStorage.removeItem("mlogin");
+    localStorage.removeItem("myntralogin");
     window.location.reload();
   }
     </script>

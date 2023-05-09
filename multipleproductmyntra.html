@@ -242,7 +242,7 @@
                 // alert("work on");
                 var divtoshowproduct=document.getElementById("productsT");
                 var finalData="";
-                var productFromLS=JSON.parse(localStorage.getItem("product"));
+                var productFromLS=JSON.parse(localStorage.getItem("myntraproducts"));
                 for(i=0;i<productFromLS.length;i++){
                     finalData+=`<div onclick='redirect(${JSON.stringify(productFromLS[i])})'id="singlePro">
                         <img src=${productFromLS[i].proimage} />
@@ -257,7 +257,7 @@
             function redirect(product){
                 var singleProduct=JSON.stringify(product);
                 alert("working");
-                localStorage.setItem("current-product",singleProduct)
+                localStorage.setItem("myntraCurrentProduct",singleProduct)
                 window.location.href='./singleproduct.html'
             }
         </script>
