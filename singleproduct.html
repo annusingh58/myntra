@@ -656,7 +656,7 @@
         var product = JSON.parse(localStorage.getItem("myntracurrentproduct"));
         console.log(product);
         var divToAppendProduct = document.getElementById("bodyimg");
-        var structure = `<div> <img src='${product.proimage}' /></div><div> <img src='${product.proimage}' /> <br/>
+        var structure = `<div> <img src='${product.proimage}' /></div> <br/>
              <h1>${product.proname}</h1><br/> <p>${product.proprice}</p><br/> 
              <button onclick='addCart()'>Add to cart</button> </div>`;
         console.log(structure, "here");
