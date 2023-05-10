@@ -49,11 +49,12 @@ function login(event){
     event.preventDefault();
 
     var email=document.getElementById("lemail").value;
-    var pass=document.getElementById("lpass").value;
+    var pass=document.getElementById("lpassword").value;
     var myntralogin={};
 
     if(email && pass){
         var marray=JSON.parse(localStorage.getItem("myntrausers"));
+        console.log(marray,"array here");
         var flaglogin=false;
         for(var i=0;i<marray.length;i++){
             if(marray[i].uemail==email){
@@ -63,8 +64,8 @@ function login(event){
         }
         if(flaglogin==true){
             localStorage.setItem("mlogin",JSON.stringify(myntralogin));
-            alert("log in successfully");
-            window.location.href="./navbar.html";
+            alert("login successfully");
+            window.location.href="./myntrahome.html";
         }
     }
     else{
