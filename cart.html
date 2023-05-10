@@ -510,7 +510,28 @@
             </div>
         </div>
     </div>
+    <script>
+      window.onload=function(){
+         var currentuser=JSON.parse(localStorage.getItem("mlogin"));
+         var userdata=JSON.parse(localStorage.getItem("myntrauserdata"));
+         var divtoappend=document.getElementById("part");
+         var products;
+         for(var i=0;i<userdata.length;i++){
+             if(currentuser.uemail == userdata[i].uemail){
+                 products=userdata[i].cartproducts;
+             }
+         }
+         var finalcart="";
+         // console.log(userdata);
+         for(var i=0;i<products.length;i++){
+             finalcart+=`<div><img src="${products[i].url}" /></div>`
+           
+         }
+         divtoappend.innerHTML=finalcart;
+     }
+   
 
+ </script>
     
 </body>
 </html>

@@ -1,96 +1,73 @@
 function signup(event){
-    event.preventDefault ( )
-    // alert("working");
- 
- 
-    var name =document.getElementById("name").value;
-    var email =document.getElementById("email").value;
-    var password=document.getElementById("password").value;
-    var confirmpassword=document.getElementById("confirmpassword").value;
- 
-    if( name && email && password && confirmpassword){
-     if(password.length>=8 && confirmpassword.length>=8){
-         if(password==confirmpassword){
- 
-            
-                 var myntra= JSON.parse(localStorage.getItem("myntraUserData")) || []   
-                 var flag=false;
-                 for(i=0;i<myntra.length;i++){
-                     if(myntra[i].uemail==email){
-                         flag=true;
-                     }
- 
-                 }
-                 if(flag==false){
-                 var mdata ={uname :name,uemail:email,upassword:password,uconfirmpassword:confirmpassword}
-                 myntra.push(mdata);
-                 console.log(myntra);
-                 localStorage.setItem("myntraUserData",JSON.stringify(myntra))
-                 window.location.href="./login.html"
- 
-                 }
-                 else{
-                     alert("email already exits")
-                 }
- 
-             }
-             else{
-                 console.log("password not match");
-             }
- 
-         }
- 
-         else{
-             console.log("password should be 8 digit");
-            
-         }
- 
- 
-    }
-    else{
-      console.log("all field are required")
-    }
- 
- }
-
- function Login(event){
     event.preventDefault();
-    alert("working");
+
+    var name=document.getElementById("mname").value;
+    var email=document.getElementById("memail").value;
+    var password=document.getElementById("mpassword").value;
+    var cpassword=document.getElementById("mconfirmpassword").value;
 
 
-    var lemail=document.getElementById("lemail").value;
-    var lpassword=document.getElementById("lpassword").value;
-
-    var loginuser={};
-    if(lemail && lpassword){
-        var myntra=JSON.parse(localStorage.getItem("myntraUserData"))
-        var flag =false;
-        for(var i=0;i<myntra.length;i++){
-            if(myntra[i].uemail==lemail){
-                flag=true;
-                loginuser=myntra[i];
+    if(name && email && password && cpassword){
+        if(password.length>=8 && password.length>=8){
+            if(password==cpassword){
+                var ls=JSON.parse(localStorage.getItem("myntrausers")) || [];
+                var flag=false;
+                for(var i=0;i<ls.length;i++){
+                    if(ls[i].uemail==email){
+                        flag=true;
+                    }
+                }
+                if(flag==true){
+                    alert("email already exist");
+                }
+                else{
+                    var myntra={uname:name,uemail:email,upassword:password,ucpassword:cpassword};
+                    ls.push(myntra);
+                    localStorage.setItem("myntrausers",JSON.stringify(ls));
+                    alert("sign up successfully");
+                    document.getElementById("mname").value='';
+                    document.getElementById("memail").value='';
+                    document.getElementById("mpassword").value='';
+                    document.getElementById("mconfirmpassword").value='';
+                    window.location.href=`./login.html`
+                }
             }
-
-           
+            else{
+                console.log("Password not matched.")
+            }
         }
-             if( flag==true){
-                localStorage.setItem("myntraCurrentUser",JSON.stringify(loginuser))
-                alert("login successfull")
-                window.location.href="./myntrahome.html";
-                
-
-        }
-        
-
-
         else{
-            alert("caredential are match");
+            console.log("Password should be more than 8 digits.")
         }
-
-
     }
     else{
-        alert("all field are required");
+        console.log("all fields are required.");
     }
+}
 
+function login(event){
+    event.preventDefault();
+
+    var email=document.getElementById("lemail").value;
+    var pass=document.getElementById("lpass").value;
+    var myntralogin={};
+
+    if(email && pass){
+        var marray=JSON.parse(localStorage.getItem("myntrausers"));
+        var flaglogin=false;
+        for(var i=0;i<marray.length;i++){
+            if(marray[i].uemail==email){
+                flaglogin=true;
+                myntralogin=marray[i];
+            }
+        }
+        if(flaglogin==true){
+            localStorage.setItem("mlogin",JSON.stringify(myntralogin));
+            alert("log in successfully");
+            window.location.href="./navbar.html";
+        }
+    }
+    else{
+        console.log("both fields are required.")
+    }
 }

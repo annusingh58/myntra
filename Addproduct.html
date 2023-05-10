@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Addproduct</title>
+    <title>Addproductmyntra</title>
 </head>
 <body>
     <form onsubmit="addproduct(event)">
@@ -25,17 +25,15 @@
             var proname=document.getElementById("pname").value;
             var proprice=document.getElementById("pprice").value;
             var proimage=document.getElementById("pimage").value;
+            var finaldata={name,orice,image};
 
 
             var product={proname,proprice,proimage};
 
-            var LS=JSON.parse(localStorage.getItem("product")) ||[];
-            LS.push(product);
-            localStorage.setItem("product",JSON.stringify(LS));
-
-            alert(" Added Sucessfully");
-
-
+            var myntrals=JSON.parse(localStorage.getItem("myntraadd-product")) || [];
+            myntrals.push(finaldata);
+            localStorage.setItem("myntraadd-product",JSON.stringify(myntrals));
+            alert("product added successfully");
 
         }
     </script>
