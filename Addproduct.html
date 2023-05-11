@@ -19,21 +19,20 @@
     <script>
         function addproduct(event){
             event.preventDefault();
-            alert("Adding product");
+            // alert("Adding product");
 
 
             var proname=document.getElementById("pname").value;
             var proprice=document.getElementById("pprice").value;
             var proimage=document.getElementById("pimage").value;
-            var finaldata={proname,proprice,proimage};
 
-            var myntraproduct={proname,proprice,proimage};
+            var mproduct={proname,proprice,proimage};
 
             var myntrals=JSON.parse(localStorage.getItem("myntraproduct")) || [];
-            myntrals.push(finaldata);
+            myntrals.push(mproduct);
             localStorage.setItem("myntraproduct",JSON.stringify(myntrals));
             alert("product added successfully");
-
+            window.location.href = './multipleproductmyntra.html';
         }
     </script>
     

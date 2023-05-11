@@ -5,7 +5,7 @@ function signup(event){
     var email=document.getElementById("memail").value;
     var password=document.getElementById("mpassword").value;
     var cpassword=document.getElementById("mconfirmpassword").value;
-
+    var cartproduct = [];
 
     if(name && email && password && cpassword){
         if(password.length>=8 && password.length>=8){
@@ -21,7 +21,7 @@ function signup(event){
                     alert("email already exist");
                 }
                 else{
-                    var myntra={uname:name,uemail:email,upassword:password,ucpassword:cpassword};
+                    var myntra={uname:name,uemail:email,upassword:password,ucpassword:cpassword, cartproduct};
                     ls.push(myntra);
                     localStorage.setItem("myntrausers",JSON.stringify(ls));
                     alert("sign up successfully");
@@ -50,20 +50,20 @@ function login(event){
 
     var email=document.getElementById("lemail").value;
     var pass=document.getElementById("lpassword").value;
-    var myntralogin={};
+    var myntra_currentuser;
 
     if(email && pass){
         var marray=JSON.parse(localStorage.getItem("myntrausers"));
         console.log(marray,"array here");
-        var flaglogin=false;
+        var flag=false;
         for(var i=0;i<marray.length;i++){
             if(marray[i].uemail==email){
-                flaglogin=true;
-                myntralogin=marray[i];
+                flag=true;
+                myntra_currentuser=marray[i];
             }
         }
-        if(flaglogin==true){
-            localStorage.setItem("mlogin",JSON.stringify(myntralogin));
+        if(flag==true){
+            localStorage.setItem("myntra_currentuser",JSON.stringify(myntra_currentuser));
             alert("login successfully");
             window.location.href="./myntrahome.html";
         }

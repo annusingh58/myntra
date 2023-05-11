@@ -242,25 +242,25 @@
             window.onload=function(){
                 // alert("work on");
                 var divtoshowproduct=document.getElementById("productsT");
-                var finalData="";
+                var finaldata="";
                 var productFromLS=JSON.parse(localStorage.getItem("myntraproduct"));
                 for(i=0;i<productFromLS.length;i++){
-                    finalData+=`<div onclick='redirect(${JSON.stringify(productFromLS[i])})'id="singlePro">
+                    finaldata +=`<div onclick='redirect(${JSON.stringify(productFromLS[i])})'id="singlePro">
                         <img src="${productFromLS[i].proimage}" />
                         <h3>${productFromLS[i].proname}</h3>
                         <p>${productFromLS[i].proprice}</p>
                         </div>`;
         
                 }
-                console.log(finalData,"finalData here");
-                divtoshowproduct.innerHTML=finalData;
+                // console.log(finalData,"finalData here");
+                divtoshowproduct.innerHTML=finaldata;
             }
             function redirect(product){
                 var singleProduct=JSON.stringify(product);
                 alert("working");
                 localStorage.setItem("myntraCurrentProduct",singleProduct)
                 window.location.href='./singleproduct.html';
-                console.log(myntraCurrentProduct);
+                // console.log(myntraCurrentProduct);
             }
         </script>
 </body>
