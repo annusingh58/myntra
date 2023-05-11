@@ -372,7 +372,7 @@
 <body>
     <div id="screen">
         <div id="navbar">
-            <div id="image">
+            <div class="image">
                 <img src="https://images.indianexpress.com/2021/01/myntra.png"/>
             </div>
             <div>
@@ -420,14 +420,14 @@
                 </div>
             </div>
                 <div id="tshirt">
-                    <div>
+                    <div id="img">
                     <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/14047672/2021/5/17/c1fd89a5-6364-4d0b-bde4-fcc0b7ddd1571621252467672-Louis-Philippe-Men-Navy-Blue-Solid-Polo-Collar-T-shirt-71816-1.jpg" />
                     </div>
-                    <div>
+                    <div id="name">
                         <h4>Louis Phillippe</h4>
                         <p>Men Navy Blue Polo Collar Tshirt</p>
                        <button>size:L</button> <button>Qty:1</button>
-                       <h5>Rs 1,044 <del>1,899</del><span> 45% OFF</span></h5>
+                       <h5 id="price">Rs 1,044 <del>1,899</del><span> 45% OFF</span></h5>
                        <p> <span>14 Days</span> return available</p>
                     </div>
                 </div>
@@ -513,21 +513,31 @@
     <script>
       window.onload=function(){
          var currentuser=JSON.parse(localStorage.getItem("mlogin"));
-         var userdata=JSON.parse(localStorage.getItem("myntrauserdata"));
-         var divtoappend=document.getElementById("part");
+         var userdata=JSON.parse(localStorage.getItem("myntrausers"));
+         var divimage = document.querySelector("#img");
+          var divprice = document.getElementById("price");
+          var divname = document.getElementById("name");
+          console.log(userdata);
+         
          var products;
          for(var i=0;i<userdata.length;i++){
              if(currentuser.uemail == userdata[i].uemail){
                  products=userdata[i].cartproducts;
              }
          }
-         var finalcart="";
+         var finalimg="";
+         var finalname="";
+         var finalprice="";
          // console.log(userdata);
          for(var i=0;i<products.length;i++){
-             finalcart+=`<div><img src="${products[i].url}" /></div>`
+             finalimg+=`<img src="${products[i].proimage}" />`
+             finalname+=`${products[i].proname}`
+             finalprice+=`${products[i].proprice}`
            
          }
-         divtoappend.innerHTML=finalcart;
+         divimg.innerHTML=finalimg;
+         divname.innerHTML=finalname;
+         divprice.innerHTML=finalprice;
      }
    
 

@@ -25,14 +25,13 @@
             var proname=document.getElementById("pname").value;
             var proprice=document.getElementById("pprice").value;
             var proimage=document.getElementById("pimage").value;
-            var finaldata={name,price,image};
+            var finaldata={proname,proprice,proimage};
 
+            var myntraproduct={proname,proprice,proimage};
 
-            var product={proname,proprice,proimage};
-
-            var myntrals=JSON.parse(localStorage.getItem("myntraadd-product")) || [];
+            var myntrals=JSON.parse(localStorage.getItem("myntraproduct")) || [];
             myntrals.push(finaldata);
-            localStorage.setItem("myntraadd-product",JSON.stringify(myntrals));
+            localStorage.setItem("myntraproduct",JSON.stringify(myntrals));
             alert("product added successfully");
 
         }

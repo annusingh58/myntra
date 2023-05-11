@@ -653,24 +653,25 @@
 </body>
 <script>
     window.onload = function () {
-        var product = JSON.parse(localStorage.getItem("myntracurrentproduct"));
+        var product = JSON.parse(localStorage.getItem("myntraCurrentProduct"));
         console.log(product);
         var divToAppendProduct = document.getElementById("bodyimg");
         var structure = `<div> <img src='${product.proimage}' /></div> <br/>
              <h1>${product.proname}</h1><br/> <p>${product.proprice}</p><br/> 
-             <button onclick='addCart()'>Add to cart</button> </div>`;
+             <button onclick='addCart(${JSON.stringify(product)})'>Add to cart</button> </div>`;
         console.log(structure, "here");
         divToAppendProduct.innerHTML = structure;
     }
-    function addCart(){
+    function addCart(product){
         alert("Adding to cart");
-        var currentUser = JSON.parse(localStorage.getItem("myntraCurrentUser"))
+        var currentUser = JSON.parse(localStorage.getItem("mlogin"))
 
-      console.log(currentUser.uemail);
-      var userdata = JSON.parse(localStorage.getItem("myntraserData"));
-        for (var i = 0; i<userdata.length; i++) {
+                console.log(currentUser.uemail);
+
+      var userdata = JSON.parse(localStorage.getItem("myntrausers"));
+        for (var i=0;i<userdata.length;i++) {
             if (currentUser.uemail == userdata[i].uemail) {
-                alert("mil gya");
+                alert("got it");
                 if (userdata[i].cartProducts === undefined) {
                     // userdata[i].cartProducts = "hello"
 
@@ -679,10 +680,11 @@
                     userdata[i].cartProducts.push(product);
                 }
                 alert("Product added to cart")
-                window.location.href = "./cart.html"
+                // window.location.href = "./cart.html"
             }
         }
-        localStorage.setItem("myntraUserData", JSON.stringify(userdata))
+        localStorage.setItem("myntrausers", JSON.stringify(userdata))
+        console.log(myntrausers);
 }
 
 
